@@ -7,68 +7,43 @@
     <title>Js Calculator</title>
 </head>
 <body>
-    <script type="text/javascript">
+    <script>
 
-function addition(){
-          a=Number(document.my_cal.first.value);
-          b=Number(document.my_cal.second.value);
-          c=a+b;
-          document.my_cal.total.value=c;
-        }
-    
+        //declaring the constants
 
-      
-    
-        function subtraction(){
-          a=Number(document.my_cal.first.value);
-          b=Number(document.my_cal.second.value);
-          c=a-b;
-          document.my_cal.total.value=c;
+        const number1 = parseFloat(prompt('Enter fisrtNumber:'));
+        const number2 = parseFloat(prompt('Enter secondNumber:'));
+
+        const operator = prompt('Enter operator (+, -, *, /)');
+
+        let result = 0;
+
+        //writing the conditions for execution
+
+        if(isNaN(number1) | isNaN(number2)){
+            alert('This input is not a number, refresh and enter a number');
         }
 
 
-                
-        function multiply(){
-          a=Number(document.my_cal.first.value);
-          b=Number(document.my_cal.second.value);
-          c=a*b;
-          document.my_cal.total.value=c;
+        else if(operator == '+'){
+            result = number1 + number2;
         }
-    
-    
-    
-        function division(){
-          a=Number(document.my_cal.first.value);
-          b=Number(document.my_cal.second.value);
-          c=a/b;
-          document.my_cal.total.value=c;
+        else if (operator == '-'){
+            result = number1 - number2;
         }
-    
-      </script>
-    
- 
-      <form name="my_cal">
-    
-     
-        First Number: <input type="text" name="first">
+        else if (operator == '*'){
+            result = number1 * number2;
+        }
+        else if (operator == '/'){
+            result = number1 / number2;
+        }
         
-        <br>
-    
-    
-        Second Number: <input type="text" name="second">
-    
-        <br><br>
-    
-        <input type="button" value="ADD" onclick="javascript:addition();">
-        <input type="button" value="SUBTRACT" onclick="javascript:subtraction();">
-        <input type="button" value="MULTIPLY" onclick="javascript:multiply();">
-        <input type="button" value="DIVIDE" onclick="javascript:division();">
 
-       
-        
-    
-    
-        Answer: <input type="text" name="total">
+        //printing the result
+
+        document.write(number1 + operator + number2 + ' = ' + result)
+
+    </script>
     
 </body>
 </html>
